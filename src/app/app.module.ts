@@ -31,6 +31,12 @@ import { PanelsComponent } from './dashboard/component/panels/panels.component';
 import { SettingsService } from './services/settings.service';
 import { WizardComponent } from './dashboard/component/wizard/wizard.component';
 
+
+//1>导入守卫
+import { LoggedInGuard}from './guard/loggedIn.guard';
+import { AUTH_PROVIDERS} from './services/auth.service';
+import { ALERT_PROVIDERS} from './services/alertmsg.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -67,7 +73,7 @@ import { WizardComponent } from './dashboard/component/wizard/wizard.component';
     MdMenuModule,
     MdCheckboxModule
   ],
-  providers: [SettingsService],
+  providers: [LoggedInGuard, AUTH_PROVIDERS, ALERT_PROVIDERS, SettingsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

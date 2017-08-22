@@ -9,7 +9,7 @@ Material-design Dashboard
 1. git clone https://github.com/wangdicoder/angular-material-dashboard
 2. cd angular-material-dashboard
 3. npm install
-4. ng serve -o (it will automatically open localhost:4200)
+4. npm  start    (it will automatically open localhost:4200)
 
 ## Further Plan
 - [x] Add Wizard Component
@@ -53,7 +53,7 @@ Material-design Dashboard
 ### Panels
 ![](https://github.com/wangdicoder/angular2-material-dashboard-pro/raw/master/screenshot/panel.png)
 
-## Acknowledge 
+## Acknowledge
 
 - [Creative Tim](https://github.com/creativetimofficial)
 - [Sweet Alert 2](https://github.com/limonte/sweetalert2)

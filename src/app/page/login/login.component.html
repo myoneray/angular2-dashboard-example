@@ -20,24 +20,27 @@
            <div class="form-row">
              <i class="material-icons">face</i>
              <md-input-container color="accent">
-               <input type="text" mdInput placeholder="First Name"/>
+               <!-- username: string;
+               password: string;
+               message: string; -->
+               <input type="text" mdInput placeholder="First Name" [(ngModel)]="name"/>
              </md-input-container>
            </div>
            <div class="form-row">
              <i class="material-icons">email</i>
              <md-input-container color="accent">
-               <input type="text" mdInput placeholder="Email address"/>
+               <input type="text" mdInput placeholder="Email address" [(ngModel)]="email"/>
              </md-input-container>
            </div>
            <div class="form-row">
              <i class="material-icons">lock_outline</i>
              <md-input-container color="accent">
-               <input type="password" mdInput placeholder="Password"/>
+               <input type="password" mdInput placeholder="Password" [(ngModel)]="password"/>
              </md-input-container>
            </div>
          </div>
          <div class="card-footer">
-           <button md-button (click)="loginBtn()">LET'S GO</button>
+           <button md-button (click)="login()">LET'S GO</button>
          </div>
        </div>
      </div>

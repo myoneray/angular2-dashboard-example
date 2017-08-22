@@ -17,22 +17,30 @@ import { LoginComponent } from './page/login/login.component';
 import { LockComponent } from './page/lock/lock.component';
 import { RegisterComponent } from './page/register/register.component';
 
+
+
+//1>导入守卫
+import {LoggedInGuard}from './guard/loggedIn.guard';
+
+
+// 2>在路由中配置LoggedInGuard
 const routes: Routes = [
-  {path: '', component: LoginComponent},
-  {path: 'lock', component: LockComponent},
-  {path: 'register', component: RegisterComponent},
-  {path: 'dashboard', component: RootComponent, children: [
-    {path: '', component: HomeComponent},
-    {path: 'profile', component: ProfileComponent},
-    {path: 'table', component: TableComponent},
-    {path: 'notification', component: NotificationComponent},
-    {path: 'alert', component: SweetAlertComponent},
-    {path: 'settings', component: SettingsComponent},
-    {path: 'components/price-table', component: PriceTableComponent},
-    {path: 'components/panels', component: PanelsComponent},
-    {path: 'components/wizard', component: WizardComponent}
-  ]}
+  { path: '', component: LoginComponent },
+  { path: 'lock', component: LockComponent, canActivate: [LoggedInGuard] },
+  { path: 'register', component: RegisterComponent },
+  {
+    path: 'dashboard', component: RootComponent, canActivate: [LoggedInGuard], children: [
+      { path: '', component: HomeComponent },
+      { path: 'profile', component: ProfileComponent },
+      { path: 'table', component: TableComponent },
+      { path: 'notification', component: NotificationComponent },
+      { path: 'alert', component: SweetAlertComponent },
+      { path: 'settings', component: SettingsComponent },
+      { path: 'components/price-table', component: PriceTableComponent },
+      { path: 'components/panels', component: PanelsComponent },
+      { path: 'components/wizard', component: WizardComponent }
+    ]
+  }
 ];
 
 export const routing = RouterModule.forRoot(routes);
-
